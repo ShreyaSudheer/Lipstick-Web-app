@@ -16,7 +16,7 @@ function setup()
 }
 function draw(){
     image(video, 0, 0, 300,300);
-    image(lipstick_img, lipX, lipY, 45, 30);
+    image(lipstick_img, lipX, lipY, 40, 30);
 }
 function modelLoaded()
 {
@@ -29,6 +29,8 @@ function take_snapshot()
 function gotPoses(results)
 {
     console.log(results);
-    noseX = console.log("lips X = " + results[0].pose.lip.x);
-    noseY = console.log("lips Y = " + results[0].pose.lip.y);
+    lipX = results[0].pose.nose.x - 18; 
+    console.log("lip X = " + lipX);
+    lipY = results[0].pose.nose.y + 5;
+    console.log("lip Y = " + lipY);
 }
